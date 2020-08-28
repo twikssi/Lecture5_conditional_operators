@@ -83,8 +83,6 @@ public class UserTest extends TestCase {
         assertEquals(expected,actual);
     }
 
-
-
     @Test
     public void testBlockUserReturnTrue (){
         var user = new User("twikss","lola345");
@@ -96,6 +94,7 @@ public class UserTest extends TestCase {
         assertEquals(expected,actual);
     }
 
+    @Test
     public void testIsBlockedReturnFalse() {
         var user = new User("twikss","lola345");
 
@@ -103,5 +102,18 @@ public class UserTest extends TestCase {
         boolean actual = user.isBlocked();
 
         assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testIncreaseAmountTrySignInReturnNumber (){
+        var user = new User("twikss","lola345");
+        user.increaseAmountTrySignIn();
+        user.increaseAmountTrySignIn();
+
+        int expected = 2;
+        int actual = user.getAmountTrySignIn();
+
+        assertEquals(expected,actual);
+
     }
 }

@@ -65,4 +65,8 @@ public class User {
     public void blockUser() {
         this.blocked = true;
     }
+
+    public void increaseAmountTrySignIn() {
+        this.amountTrySignIn += 1;
+    }
 }
