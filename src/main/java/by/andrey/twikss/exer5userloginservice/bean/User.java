@@ -7,7 +7,7 @@ public class User {
     private String password;
     private boolean blockedOrNot = false;
     private int amountTrySignIn = 0;
-    private static final int MAX_AMOUNT_TRY_SIGN_IN = 3;
+    public static final int MAX_AMOUNT_TRY_SIGN_IN = 3;
 
     public User(String login, String password) {
         this.login = login;
