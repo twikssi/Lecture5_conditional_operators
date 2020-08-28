@@ -9,14 +9,19 @@ public class UserService {
         this.user = user;
     }
 
-    public boolean login() {
-        return true;
+    public boolean login(String password) {
+        if (user.isBlocked()){
+            return false;
+        } else {
+            return true;
+        }
     }
 
-    public boolean checkUserAmountTrySignInIflessThenMaxAmountTrySignInReturnTrue() {
+    public void blockUserOrIncreaseAmounTrySignIn() {
         if (user.getAmountTrySignIn() < User.MAX_AMOUNT_TRY_SIGN_IN){
-            return true;
-        } else
-            return false;
+            user.increaseAmountTrySignIn();
+        } else {
+            user.blockUser();
+        }
     }
 }

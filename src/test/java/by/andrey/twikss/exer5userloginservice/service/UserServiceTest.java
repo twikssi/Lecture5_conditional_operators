@@ -6,26 +6,31 @@ import org.junit.Test;
 
 public class UserServiceTest extends TestCase {
 
+
     @Test
-    public void testCheckUserAmountTrySignInIflessThenMaxAmountTrySignInReturnFalse(){
+    public void testBlockUserOrIncreaseAmounTrySignInReturnNumber(){
         var user = new User("twikssi","robotPiter");
         var userService = new UserService(user);
-        user.setAmountTrySignIn(3);
+        userService.blockUserOrIncreaseAmounTrySignIn();
+        userService.blockUserOrIncreaseAmounTrySignIn();
 
-        boolean expected = false;
-        boolean actual = userService.checkUserAmountTrySignInIflessThenMaxAmountTrySignInReturnTrue();
+        int expected = 2;
+        int actual = user.getAmountTrySignIn();
 
         assertEquals(expected,actual);
     }
 
     @Test
-    public void testCheckUserAmountTrySignInIflessThenMaxAmountTrySignInReturnTrue(){
+    public void testBlockUserOrIncreaseAmounTrySignInReturnTrue(){
         var user = new User("twikssi","robotPiter");
         var userService = new UserService(user);
-        user.setAmountTrySignIn(2);
+        userService.blockUserOrIncreaseAmounTrySignIn();
+        userService.blockUserOrIncreaseAmounTrySignIn();
+        userService.blockUserOrIncreaseAmounTrySignIn();
+        userService.blockUserOrIncreaseAmounTrySignIn();
 
         boolean expected = true;
-        boolean actual = userService.checkUserAmountTrySignInIflessThenMaxAmountTrySignInReturnTrue();
+        boolean actual = user.isBlocked();
 
         assertEquals(expected,actual);
     }
@@ -35,10 +40,8 @@ public class UserServiceTest extends TestCase {
         var user = new User("twikssi","robotPiter");
         var userService = new UserService(user);
 
-        userService.login();
-
         boolean expected = true;
-        boolean actual = userService.login();
+        boolean actual = userService.login("o");
     }
 
 }
