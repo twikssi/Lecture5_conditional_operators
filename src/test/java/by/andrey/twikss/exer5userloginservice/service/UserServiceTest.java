@@ -36,12 +36,14 @@ public class UserServiceTest extends TestCase {
     }
 
     @Test
-    public void testLogin(){
+    public void testLoginReturnTrue(){
         var user = new User("twikssi","robotPiter");
         var userService = new UserService(user);
 
         boolean expected = true;
-        boolean actual = userService.login("o");
+        boolean actual = userService.login("robotPiter");
+
+        assertEquals(expected,actual);
     }
 
 }

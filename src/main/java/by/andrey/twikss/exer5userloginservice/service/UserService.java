@@ -13,10 +13,12 @@ public class UserService {
         if (user.isBlocked()){
             return false;
         } else {
-            if (user.){
-
+            if (user.getPassword().equals(password)){
+                user.resetAmountTrySignIn();
+                return true;
             } else {
-
+                blockUserOrIncreaseAmounTrySignIn();
+                return false;
             }
         }
     }
