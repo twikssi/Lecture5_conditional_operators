@@ -27,7 +27,6 @@ public class UserServiceTest extends TestCase {
         userService.blockUserOrIncreaseAmounTrySignIn();
         userService.blockUserOrIncreaseAmounTrySignIn();
         userService.blockUserOrIncreaseAmounTrySignIn();
-        userService.blockUserOrIncreaseAmounTrySignIn();
 
         boolean expected = true;
         boolean actual = user.isBlocked();
@@ -46,4 +45,16 @@ public class UserServiceTest extends TestCase {
         assertEquals(expected,actual);
     }
 
+    @Test
+    public void testLoginReturnFalse(){
+        var user = new User("twikssi","robotPiter");
+        var userService = new UserService(user);
+        userService.login("dsfs");
+        userService.login("ds");
+
+        boolean expected = false;
+        boolean actual = userService.login("robotPite");
+
+        assertEquals(expected,actual);
+    }
 }
