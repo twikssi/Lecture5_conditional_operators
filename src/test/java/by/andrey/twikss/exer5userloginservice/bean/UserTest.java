@@ -47,4 +47,41 @@ public class UserTest extends TestCase {
 
         assertEquals(expected,actual);
     }
+
+    @Test
+    public void testResetAmountTrySignInReturnZero(){
+        var user = new User("twikss","lola345");
+        user.setAmountTrySignIn(34);
+        user.resetAmountTrySignIn();
+
+        int expected = 0;
+        int actual = user.getAmountTrySignIn();
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testResetAmountTrySignInReturnFalse(){
+        var user = new User("twikss","lola345");
+        user.setAmountTrySignIn(3);
+        user.resetAmountTrySignIn();
+
+        boolean expected = false;
+        boolean actual = user.getAmountTrySignIn() == 3;
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testGetAmountTrySignIn() {
+        var user = new User("twikss","lola345");
+        user.setAmountTrySignIn(3);
+
+        boolean expected = true;
+        boolean actual = user.getAmountTrySignIn() == 3 ;
+
+        assertEquals(expected,actual);
+    }
+
+
 }

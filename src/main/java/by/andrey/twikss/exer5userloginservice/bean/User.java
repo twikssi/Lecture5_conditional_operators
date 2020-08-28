@@ -57,4 +57,8 @@ public class User {
                 ", MAX_AMOUNT_TRY_SIGN_IN=" + MAX_AMOUNT_TRY_SIGN_IN +
                 '}';
     }
+
+    public void resetAmountTrySignIn() {
+        this.amountTrySignIn = 0;
+    }
 }
