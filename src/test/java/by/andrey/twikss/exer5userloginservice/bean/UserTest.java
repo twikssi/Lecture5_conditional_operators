@@ -84,4 +84,24 @@ public class UserTest extends TestCase {
     }
 
 
+
+    @Test
+    public void testBlockUserReturnTrue (){
+        var user = new User("twikss","lola345");
+        user.blockUser();
+
+        boolean expected = true;
+        boolean actual = user.isBlocked();
+
+        assertEquals(expected,actual);
+    }
+
+    public void testIsBlockedReturnFalse() {
+        var user = new User("twikss","lola345");
+
+        boolean expected = false;
+        boolean actual = user.isBlocked();
+
+        assertEquals(expected,actual);
+    }
 }

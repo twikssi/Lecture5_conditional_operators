@@ -5,7 +5,7 @@ import java.util.Objects;
 public class User {
     private String login;
     private String password;
-    private boolean blockedOrNot = false;
+    private boolean blocked = false;
     private int amountTrySignIn = 0;
     public static final int MAX_AMOUNT_TRY_SIGN_IN = 3;
 
@@ -14,12 +14,12 @@ public class User {
         this.password = password;
     }
 
-    public boolean isBlockedOrNot() {
-        return blockedOrNot;
+    public boolean isBlocked() {
+        return blocked;
     }
 
-    public void setBlockedOrNot(boolean blockedOrNot) {
-        this.blockedOrNot = blockedOrNot;
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
     public int getAmountTrySignIn() {
@@ -36,7 +36,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return blockedOrNot == user.blockedOrNot &&
+        return blocked == user.blocked &&
                 amountTrySignIn == user.amountTrySignIn &&
                 Objects.equals(login, user.login) &&
                 Objects.equals(password, user.password);
@@ -44,7 +44,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(login, password, blockedOrNot, amountTrySignIn);
+        return Objects.hash(login, password, blocked, amountTrySignIn);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class User {
         return "User{" +
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", blockedOrNot=" + blockedOrNot +
+                ", blockedOrNot=" + blocked +
                 ", amountTrySignIn=" + amountTrySignIn +
                 ", MAX_AMOUNT_TRY_SIGN_IN=" + MAX_AMOUNT_TRY_SIGN_IN +
                 '}';
@@ -60,5 +60,9 @@ public class User {
 
     public void resetAmountTrySignIn() {
         this.amountTrySignIn = 0;
+    }
+
+    public void blockUser() {
+        this.blocked = true;
     }
 }
