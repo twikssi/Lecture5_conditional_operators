@@ -81,4 +81,18 @@ public class UserServiceTest extends TestCase {
 
         assertEquals(expected,actual);
     }
+
+    @Test
+    public void testLoginReturnNumber(){
+        var user = new User("twikssi","robotPiter");
+        var userService = new UserService(user);
+        userService.login("dsfs");
+        userService.login("ds");
+        userService.login("robotPiter");
+
+        int expected = 0;
+        int actual = user.getAmountTrySignIn();
+
+        assertEquals(expected,actual);
+    }
 }
