@@ -69,4 +69,16 @@ public class UserServiceTest extends TestCase {
 
         assertEquals(expected,actual);
     }
+
+    @Test
+    public void testLoginReturnThirdFalse(){
+        var user = new User("twikssi","robotPiter");
+        var userService = new UserService(user);
+        user.setBlocked(true);
+
+        boolean expected = false;
+        boolean actual = userService.login("robotPiter");
+
+        assertEquals(expected,actual);
+    }
 }
