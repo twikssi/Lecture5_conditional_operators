@@ -13,7 +13,11 @@ public class UserService {
         if (user.isBlocked()){
             return false;
         } else {
-            return true;
+            if (user.){
+
+            } else {
+
+            }
         }
     }
 
