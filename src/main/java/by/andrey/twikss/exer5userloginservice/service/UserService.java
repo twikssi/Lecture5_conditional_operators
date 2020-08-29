@@ -24,7 +24,7 @@ public class UserService {
     }
 
     public void blockUserOrIncreaseAmounTrySignIn() {
-        if (user.getAmountTrySignIn() < (User.MAX_AMOUNT_TRY_SIGN_IN - 1)){
+        if (user.getAmountTrySignIn() < (User.MAX_AMOUNT_TRY_SIGN_IN)){
             user.increaseAmountTrySignIn();
         } else {
             user.blockUser();
