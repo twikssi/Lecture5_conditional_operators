@@ -43,7 +43,7 @@ public class UserTest extends TestCase {
         var user = new User("twikss","lola345");
 
         boolean expected = true;
-        boolean actual = user.toString().equals("User{login='twikss', password='lola345', blockedOrNot=false, amountTrySignIn=0, MAX_AMOUNT_TRY_SIGN_IN=3}");
+        boolean actual = user.toString().equals("User{login='twikss', password='lola345', blockedOrNot=false, amountTrySignIn=0, MAX_AMOUNT_TRY_SIGN_IN=2}");
 
         assertEquals(expected,actual);
     }
