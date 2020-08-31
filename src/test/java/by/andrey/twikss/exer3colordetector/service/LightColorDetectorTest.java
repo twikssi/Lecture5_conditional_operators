@@ -67,4 +67,13 @@ public class LightColorDetectorTest extends TestCase {
 
         assertEquals(expected,actual);
     }
+
+    @Test
+    public void testDetectReturnYellow() {
+
+        String expected = "Yellow";
+        String actual = LightColorDetector.detect(576);
+
+        assertEquals(expected,actual);
+    }
 }
