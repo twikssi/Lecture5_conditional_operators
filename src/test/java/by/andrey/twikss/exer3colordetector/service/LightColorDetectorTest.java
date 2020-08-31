@@ -24,10 +24,37 @@ public class LightColorDetectorTest extends TestCase {
     }
 
     @Test
+    public void testDetectReturnVioletEdgeVariableTwo() {
+
+        String expected = "Violet";
+        String actual = LightColorDetector.detect(380);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
     public void testDetectReturnBlue() {
 
         String expected = "Blue";
         String actual = LightColorDetector.detect(456);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDetectReturnBluetEdgeVariable() {
+
+        String expected = "Blue";
+        String actual = LightColorDetector.detect(450);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDetectReturnBluetEdgeVariableTwo() {
+
+        String expected = "Blue";
+        String actual = LightColorDetector.detect(494);
 
         assertEquals(expected,actual);
     }
