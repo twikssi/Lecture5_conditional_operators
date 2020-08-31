@@ -85,4 +85,31 @@ public class LightColorDetectorTest extends TestCase {
 
         assertEquals(expected,actual);
     }
+
+    @Test
+    public void testDetectReturnRed() {
+
+        String expected = "Red";
+        String actual = LightColorDetector.detect(700);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDetectReturnInvisibleLightUp() {
+
+        String expected = "Invisible Light";
+        String actual = LightColorDetector.detect(890);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDetectReturnInvisibleLightDown() {
+
+        String expected = "Invisible Light";
+        String actual = LightColorDetector.detect(0);
+
+        assertEquals(expected,actual);
+    }
 }

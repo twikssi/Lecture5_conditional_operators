@@ -16,8 +16,9 @@ public class LightColorDetector {
             return "Yellow";
         } else if (waveLength >= 590 && waveLength <= 619){
             return "Orange";
-        }
-            else {
+        } else if (waveLength >= 620 && waveLength <= 750){
+            return "Red";
+        } else {
             return "Invisible Light";
         }
     }
