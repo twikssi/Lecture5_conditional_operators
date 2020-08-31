@@ -10,6 +10,8 @@ public class LightColorDetector {
             return "Violet";
         } else if (waveLength >= 450 && waveLength <= 494) {
             return "Blue";
+        } else if (waveLength >= 495 && waveLength <= 569){
+            return "Green";
         }
             else {
             return "Invisible Light";
