@@ -38,7 +38,7 @@ public class StockServerTest extends TestCase {
         stockServer.updatePrice(10);
         stockServer.updatePrice(7);
 
-        System.out.println(stock.toString());
+        stockServer.printInformation();
 
         boolean expected = true;
         boolean actual = (stock.getCurrentPrice() == 7);
